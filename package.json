@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1", 
     "meu-comando" : "echo Executou o meu comando.",
-    "dev": "node nota-aluno.ts"
+    "dev": "node perfil-de-acesso.ts"
   },
   "keywords": [],
   "author": "",
