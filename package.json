@@ -1,11 +1,11 @@
 {
   "name": "meu-projeto-node",
   "version": "1.0.0",
-  "description": "",
+  "description": "Este repositório contém a configuração básica e os aprendizados iniciais sobre Node.js e TypeScript. Abaixo, detalho o passo a passo utilizado para configurar este ambiente do zero.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1", 
-    "meu-comando" : "echo Executou o meu comando.",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "meu-comando": "echo Executou o meu comando.",
     "dev": "node contar-ocorrencias.ts"
   },
   "keywords": [],
@@ -13,8 +13,27 @@
   "license": "ISC",
   "type": "commonjs",
   "devDependencies": {
-    "@types/node": "^25.0.8",
+    "@types/node": "^25.0.9",
     "ts-node": "^10.9.2",
     "typescript": "^5.9.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/everton-oliveiras/meu-projeto-node.git"
+  },
+  "bugs": {
+    "url": "https://github.com/everton-oliveiras/meu-projeto-node/issues"
+  },
+  "homepage": "https://github.com/everton-oliveiras/meu-projeto-node#readme",
+  "dependencies": {
+    "acorn": "^8.15.0",
+    "acorn-walk": "^8.3.4",
+    "arg": "^4.1.3",
+    "create-require": "^1.1.1",
+    "diff": "^4.0.2",
+    "make-error": "^1.3.6",
+    "undici-types": "^7.16.0",
+    "v8-compile-cache-lib": "^3.0.1",
+    "yn": "^3.1.1"
   }
 }
