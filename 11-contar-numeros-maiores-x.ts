@@ -5,12 +5,15 @@
 */
 
 const listaNumeros: number[] = [2, 8, 4, 10, 11, 3, 5, 1, 12];
-const numEscolhido: number = 5;
-let numMaiores: number[] = [];
+const numEscolhido: number = 8;
+//let numMaiores: number[] = [];
+let contagem: number = 0;
 
 for (let num of listaNumeros) {
     if (num > numEscolhido) {
-        numMaiores.push(num);
+        contagem++;
+        //numMaiores.push(num);
     }
 }
-console.log(`Os números ${numMaiores} são maiores que ${numEscolhido}.`);
+console.log(`${contagem} da lista são maiores que ${numEscolhido}`);
+//console.log(`Os números ${numMaiores} são maiores que ${numEscolhido}.`);
