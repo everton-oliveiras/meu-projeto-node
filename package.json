@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "meu-comando": "echo Executou o meu comando.",
-    "dev": "node contar-ocorrencias.ts"
+    "dev": "node 10-contar-ocorrencias.ts"
   },
   "keywords": [],
   "author": "",
