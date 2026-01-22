@@ -22,15 +22,14 @@ itens1.qty = 2;
 itens2.name = "prato";
 itens2.price = 5;
 itens2.qty = 1;
-
+/*
 itens3.name = "faca";
 itens3.price = 2;
 itens3.qty = 5;
-
-//let soma: number = 0;
+*/
 let resultado: number = 0;
 
-const listaItens: Itens[] = [itens1, itens2, itens3];
+const listaItens: Itens[] = [itens1, itens2, /*itens3*/];
 
 for (let item of listaItens) {
     resultado += item.price * item.qty;
