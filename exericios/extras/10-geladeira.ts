@@ -36,5 +36,3 @@ geladeira1.adicionarProduto(`Leite`)
 
 console.log(`estoque G1: `, geladeira1.listarEstoque())
 console.log(`estoque G2: `, geladeira2.listarEstoque())
-
-
