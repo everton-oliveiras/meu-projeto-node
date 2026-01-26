@@ -32,3 +32,6 @@ for (const num of numeros) {
 }
 
 console.log(`${numMaior} é o número maior`);
+
+numeros.filter(num => num > numMaior);
+console.log({maior: numMaior});

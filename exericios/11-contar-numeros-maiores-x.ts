@@ -17,3 +17,11 @@ for (let num of listaNumeros) {
 }
 console.log(`${contagem} da lista são maiores que ${numEscolhido}`);
 //console.log(`Os números ${numMaiores} são maiores que ${numEscolhido}.`);
+
+const numerosMaiores = listaNumeros.filter(num => num > numEscolhido);
+
+console.log({contagem: contagem},{numerosMaiores: numerosMaiores});
+
+const dobro = listaNumeros.map(num => num * 2);
+
+console.log({numerosdobro: dobro});

@@ -17,3 +17,10 @@ for (let palavra of listaPalavras) {
     }
 }
 console.log(`${contagem} palavras da lista tem mais que ${numLetras} letras.`);
+
+
+const palavras = listaPalavras.filter(palavras => palavras.length > numLetras);
+
+
+console.log({palavras: palavras});
+

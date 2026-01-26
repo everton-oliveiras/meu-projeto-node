@@ -32,3 +32,11 @@ for (const num of listaNumeros) {
 
 
 console.log(`O número ${x} apareceu ${contagem} vezes na lista.`);
+
+let quantidade: number = 0;
+
+const ocorrencias = listaNumeros.filter(num => num === x);
+quantidade++;
+
+console.log({ocorrencias: ocorrencias});
+console.log({contagem: contagem});
