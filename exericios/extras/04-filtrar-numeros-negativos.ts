@@ -8,7 +8,7 @@ const listaNumeros: number[] = [5, -3, 10, -1];
 let numerosNegativos: number[] = [];
 
 for (let num of listaNumeros) {
-    if (num < 0 ){
+    if (num < 0) {
         numerosNegativos.push(num);
     }
 }
