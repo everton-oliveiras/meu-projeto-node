@@ -8,10 +8,13 @@
     3 - Receber valor referente ao terceiro lado;
     4 - Verificar se o primeiro lado é igual ao segundo e terceiro lado;
     5 - Se for, exibir "Equilátero";
-    6 - Se não for, verificar se primeiro lado é igual ao segundo lado e diferente do terceiro lado
-        ou se o primeiro lado é diferente do segundo lado e igual ao terceiro lado;
+    6 - Se não for, verificar se primeiro lado é igual ao segundo lado 
+        ou segundo lado é igual ao terceiro lado ou terceiro lado é igual ao primeiro;
     7 - Se for, exibir "Isósceles";
     8 - Se nao for, exibir "Escaleno";
+
+    ----------------------------------------------------------------------------------
+
 */
 
 const lado1: number = 8;
