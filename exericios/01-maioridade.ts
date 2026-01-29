@@ -8,6 +8,7 @@ Entrada: idade = 20 → Saída: "Maior de idade"
 
 */
 
+/*
 const idade: number = 20;
 
 if (idade >= 18) {
@@ -16,3 +17,15 @@ if (idade >= 18) {
 else {
     console.log("Menor de idade");
 }
+*/
+
+function Maioridade(_idade: number) {
+    if (_idade >= 18) {
+        return "Maior de Idade.";
+    }
+    else {
+        return "Menor de Idade.";
+    }
+}
+
+console.log(Maioridade(17));

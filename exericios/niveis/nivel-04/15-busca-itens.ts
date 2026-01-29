@@ -14,4 +14,3 @@ const listaNomes: string[] = ["Aline", "Leonardo", "Evelyn", "Michell", "Patrici
 const nome: string = "Roberto";
 
 const buscarNome = listaNomes.filter(nomeSelecionado => nomeSelecionado === nome);
-console.log(buscarNome);
