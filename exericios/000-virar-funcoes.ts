@@ -274,10 +274,10 @@ function contarPalavras(numDeLetras: number, _listaPalavras: string[] = listaPal
 
     const palavrasFiltradas = _listaPalavras.filter(palavras => palavras.length > numDeLetras).length;
 
-    console.log(palavrasFiltradas);
-    return `A lista contém ${palavrasFiltradas} com mais de ${numDeLetras} letras.`;
+    //console.log(palavrasFiltradas);
+    return `A lista contém ${palavrasFiltradas} palavras com mais de ${numDeLetras} letras.`;
 }
-console.log(`Exercício 11.2: A lista contém`, contarPalavras(3));
+console.log(`Exercício 11.2:`, contarPalavras(3));
 
 /*  11.3)  Encontrar a maior palavra
     Enunciado:
@@ -285,15 +285,130 @@ console.log(`Exercício 11.2: A lista contém`, contarPalavras(3));
     Exemplo:
     Entrada: ["carro", "bicicleta", "avião"]
 */
-function encontrarMaiorPalavra(_listaPalavras: string[] = listaPalavras){
-    let maiorPalavra: string = "";
-    for(let palavraSelecionada of _listaPalavras){
-        if (palavraSelecionada > maiorPalavra){
-            maiorPalavra = palavraSelecionada;
+
+function encontrarMaiorPalavra(lista: string[]): string {
+
+    // O .reduce percorre a lista fazendo duelos.
+    // "campeao": é o acumulador (o resultado que está sendo carregado).
+    // "desafiante": é a palavra atual que estamos testando.
+
+    const vencedora = lista.reduce((campeao, desafiante) => {
+
+        //console.log(lista);
+        console.log(`Duelo: Campeão (${campeao}) vs Desafiante (${desafiante})`);
+
+        // A REGRA DA BATALHA:
+        // Se o desafiante for maior que o campeão atual...
+        if (desafiante.length > campeao.length) {
+            return desafiante; // O desafiante ganha e vira o novo campeão.
+        } else {
+            return campeao;    // O campeão mantém o título.
         }
-        return maiorPalavra;
-    }
-    
+
+    }, ""); // O "" é o primeiro campeão (começa vazio)
+
+    return vencedora;
 }
-//console.log(`Exercício 11.3: A maior palavra da lista é:`, encontrarMaiorPalavra());
-//console.log(listaPalavras);
+
+console.log("Exercício 11.3: A maior palavra é:", encontrarMaiorPalavra(listaPalavras));
+
+/*
+Desafio 01: O Somador de Estoque
+Cenário: Você tem uma lista de quantidades de produtos em um pequeno estoque e precisa saber o total de itens armazenados.
+
+*/
+const estoque: number[] = [12, 5, 8, 20, 15];
+
+function calcularTotalEstoque(itens: number[]): number {
+    const total = itens.reduce((acumulador, atual) => acumulador = acumulador + atual);
+    return total;
+}
+console.log("Total em estoque:", calcularTotalEstoque(estoque));
+
+function calcularValores(numeros: number[]): number {
+    const total = numeros.reduce((acumulador, atual) => acumulador = acumulador + atual);
+    return total;
+}
+console.log(`Total dos valores: ${calcularValores(listaNumeros)}`);
+
+const numeros: number[] = [1, 2, 3]
+function retornarDobro(_listaNumeros: number[]) {
+    const dobroNumeros = _listaNumeros.map(num => num * 2);
+    return dobroNumeros;
+}
+console.log(`Dobro dos numeros da lista`, retornarDobro(numeros));
+
+/*  Desafio 01 - O Aplicador de Descontos
+
+    Cenário: Você tem uma lista de preços de produtos e quer criar uma nova lista onde todos 
+    os itens receberam um desconto de 10% (ou seja, cada valor deve ser multiplicado por 0.9).
+
+    Entrada: [100, 50, 20, 10]
+
+    Sua tarefa: Criar uma função que use o método adequado para gerar a lista com os novos preços.
+*/
+
+const listaPrecosProdutos: number[] = [100, 50, 20, 10];
+
+function listarNovosPrecos(_listaPrecosProdutos: number[]) {
+    const novosPrecos = _listaPrecosProdutos.map(precoSelecionado => precoSelecionado * 0.9);
+    return novosPrecos;
+}
+console.log(`Desafio 01: Preços com Desconto:`, listarNovosPrecos(listaPrecosProdutos));
+
+/*  Desafio 02: O Verificador de Frete
+
+    Cenário: Você tem uma lista com os pesos de vários produtos em kg.
+    Você precisa saber o peso total da compra para calcular o valor do frete.
+
+    Entrada: [1.5, 2.0, 0.5, 3.2]
+
+    Sua tarefa: Criar uma função que use o método de acumulação para retornar um único número (o peso total).
+*/
+const listaPesoProdutos: number[] = [1.5, 2.0, 0.5, 3.2];
+function retornarPesoTotal(_listaPesoProdutos: number[]) {
+    const pesoTotal: number = _listaPesoProdutos.reduce((acumulador, total) => acumulador += total);
+    return pesoTotal;
+}
+console.log(`O peso total dos produtos é:`, retornarPesoTotal(listaPesoProdutos));
+
+/*  Desafio 03: O Filtro de Seção
+    Cenário: O mercado quer organizar os produtos por categoria.
+    Você recebeu uma lista de objetos e precisa criar uma nova lista contendo apenas os produtos da categoria "limpeza".
+
+    Entrada: produtos = [
+            { nome: 'Detergente', categoria: 'limpeza' },
+            { nome: 'Arroz', categoria: 'comida' },
+            { nome: 'Sabão em Pó', categoria: 'limpeza' },
+            { nome: 'Leite', categoria: 'comida' }
+            ];
+*/
+class Produto {
+    nome: string = "";
+    categoria: string = "";
+    valor: number = 0;
+
+    constructor(_nome: string, _categoria: string, _valor: number) {
+        this.nome = _nome;
+        this.categoria = _categoria;
+        this.valor = _valor;
+    }
+}
+
+const produto1 = new Produto("Detergente", "Limpeza", 2.90);
+const produto2 = new Produto("Arroz", "Comida", 25.99);
+const produto3 = new Produto("Sabão em Pó", "Limpeza", 18.50);
+const produto4 = new Produto("Leite", "Comida", 4.99);
+
+const listaProdutos: Produto[] = [produto1, produto2, produto3, produto4];
+function listarProdutoPorCategoria(_categoriaProduto: string, _listaProdutos = listaProdutos) {
+    const listaProdutosFiltrada = _listaProdutos.filter(produto => produto.categoria === _categoriaProduto);
+    const somaProdutosFiltrados = listaProdutosFiltrada.reduce((acumulador, atual) => acumulador + atual.valor, 0);
+    return { listaProdutosFiltrada, somaProdutosFiltrados };
+}
+function somarValoresProdutos(_listaProdutos = listaProdutos) {
+    const somaProdutos = _listaProdutos.reduce((acumulador, atual) => acumulador + atual.valor, 0);
+    return somaProdutos;
+}
+console.log(`Desafio 03: Valor somado de todos os produtos:`, somarValoresProdutos());
+console.log(`Desafio 03: São da categoria Limpeza os produtos:`, listarProdutoPorCategoria("Limpeza", listaProdutos));
